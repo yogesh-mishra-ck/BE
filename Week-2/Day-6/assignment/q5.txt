@@ -1,0 +1,8 @@
+Question 5:
+Create two branches from main/master branch, say f1 and f2.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Create branches
+git branch f1
+git branch f2

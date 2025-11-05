@@ -1,0 +1,17 @@
+Question 13.
+Delete branch from local and remote.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Deleting a branch
+
+Local
+git branch -d branch_name
+
+Remote
+
+Delete the remote branch
+git push origin --delete branch-name
+
+Clean up local references
+git fetch -p

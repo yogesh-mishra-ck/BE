@@ -1,0 +1,12 @@
+Question 7:
+Show how divergence occurs in a branch.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Divergence occurs when branches are not in sync with each other
+Situation 1:
+Local Branch Divergence
+When my local branch and remote branch are not in sync and remote branch already has some new commits that i have not yet pulled.
+
+Remote Branch Divergence
+When two different users have pushed changes to the same branch , but none of them have pulled the changes from each other.

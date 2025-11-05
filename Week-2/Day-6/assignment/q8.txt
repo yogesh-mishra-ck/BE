@@ -1,0 +1,7 @@
+Question 8.	
+Difference between git init and git clone.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+git init is used for initializing a local repository
+git clone is used for cloning/fetching everything from an existing repository

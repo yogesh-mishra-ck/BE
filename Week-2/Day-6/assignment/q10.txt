@@ -1,0 +1,7 @@
+Question 10.
+Difference between git fetch and git pull.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+git fetch is used to bring updates from a repository but they are not merged into mine local branch.
+git pull also brings updates from a repository but this time automatically attempts to merge the changes from the remote branch into the current local branch.

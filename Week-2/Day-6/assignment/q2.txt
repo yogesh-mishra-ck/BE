@@ -1,0 +1,6 @@
+Question 2:
+Create a repository on github account
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Created repo on github account 
+And copied its ssh

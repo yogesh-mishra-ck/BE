@@ -1,0 +1,7 @@
+Question 12.
+Show the difference between git reset and git revert.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+In git revert, a new branch is created with undo operation(undo the changes made by previous commit) so that we still have history of our branches
+In git reset, the data cannot be recovered again, it is a permanent undo operation.

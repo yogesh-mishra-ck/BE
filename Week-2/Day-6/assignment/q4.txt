@@ -1,0 +1,12 @@
+Question 4:
+Create a new file, say test.txt, in main/master branch. Make some changes to this file and commit the changes.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Creating file
+touch test.txt
+cat > test.txt
+Hello this is the day-6 file for testing git basics and using ssh.
+
+Commit
+git commit -m "Made changes in test file for day-6"

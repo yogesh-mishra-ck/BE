@@ -1,0 +1,11 @@
+Question 9:
+Difference between git branch and git checkout.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+git branch is used to see the list of branches present
+we can also create a new branch using git branch
+git branch branch_name
+
+git checkout is used for going to a different branch.
+git checkout branch_name

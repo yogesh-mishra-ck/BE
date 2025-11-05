@@ -1,0 +1,145 @@
+Question 1: 
+Configure SSH key in github account.
+Creating ssh key
+ssh-keygen -t ed25519 -C "yogeshmishra24x@gmail.com"
+
+eval "$(ssh-agent -s)"
+
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+
+Now copy key
+Add in github ssh
+
+ssh -T git@github.com
+
+----------------------------------------------------------
+Question 2:
+Created repo on github account 
+And copied its ssh
+
+Question 3: 
+Clone Repo
+git clone git@github.com:yogesh-mishra-ck/Day-6-BE.git
+
+Question 4:
+Create a new file, say test.txt, in main/master branch. Make some changes to this file and commit the changes.
+
+Creating file
+touch test.txt
+cat > test.txt
+Hello this is the day-6 file for testing git basics and using ssh.
+
+Commit
+git commit -m "Made changes in test file for day-6"
+
+
+Question 5:
+Create two branches from main/master branch, say f1 and f2.
+
+Create branches
+git branch f1
+git branch f2
+
+Question 6:
+How can you resolve a merge conflict in Git, provide an example.
+
+git checkout f1
+Make changes in file in f1 branch
+git add .
+git commit -m "changes by f1"
+git push origin f1
+
+
+git checkout f2
+Make changes in file in f2 branch
+git add .
+git commit -m "changes by f2"
+git push origin f2
+
+git checkout main
+git merge f1
+git merge f2
+
+Conflict occured
+
+git checkout main
+Resolved by choosing f1
+git push origin main
+
+Question 7:
+Show how divergence occurs in a branch.
+
+Divergence occurs when branches are not in sync with each other
+Situation 1:
+Local Branch Divergence
+When my local branch and remote branch are not in sync and remote branch already has some new commits that i have not yet pulled.
+
+Remote Branch Divergence
+When two different users have pushed changes to the same branch , but none of them have pulled the changes from each other.
+
+Question 8.	
+Difference between git init and git clone.
+
+git init is used for initializing a local repository
+git clone is used for cloning/fetching everything from an existing repository
+
+Question 9:
+Difference between git branch and git checkout.
+
+git branch is used to see the list of branches present
+we can also create a new branch using git branch
+git branch branch_name
+
+git checkout is used for going to a different branch.
+git checkout branch_name
+
+Question 10.
+Difference between git fetch and git pull.
+git fetch is used to bring updates from a repository but they are not merged into mine local branch.
+git pull also brings updates from a repository but this time automatically attempts to merge the changes from the remote branch into the current local branch.
+
+
+Question 11:
+How to squash commits?
+Squashing commits means to combine multiple commits into a single commit
+This is used for cleaning our commit history
+
+Creating a new branch
+git branch squash-test
+
+Creating multiple commits
+git commit -m "squashing commits -first here"
+git commit -m "squashing commits -second here"
+git commit -m "squashing commits -third here"
+
+Seeing git history
+git log --oneline
+
+Squashing three commits together
+git rebase -i HEAD-3
+Picking one and squashing rest
+
+git push origin squash-test
+
+Question 12.
+Show the difference between git reset and git revert.
+
+In git revert, a new branch is created with undo operation(undo the changes made by previous commit) so that we still have history of our branches
+In git reset, the data cannot be recovered again, it is a permanent undo operation.
+
+Question 13.
+Delete branch from local and remote.
+
+Deleting a branch
+
+Local
+git branch -d branch_name
+
+Remote
+
+Delete the remote branch
+git push origin --delete branch-name
+
+Clean up local references
+git fetch -p

@@ -18,7 +18,7 @@ Seeing git history
 git log --oneline
 
 Squashing three commits together
-git rebase -i HEAD-3
+git rebase -i HEAD~3
 Picking one and squashing rest
 
 git push origin squash-test

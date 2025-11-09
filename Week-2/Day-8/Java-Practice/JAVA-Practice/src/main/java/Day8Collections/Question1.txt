@@ -1,0 +1,17 @@
+1. What is the Java Collections Framework? Explain its advantages.
+
+Java Collection is a set of classes and interfaces in the util package that provides common data structures and algorithms , abstracting the implementation of them.
+
+Advantages:
+
+Dynamic Allocation
+Collections can grow and shrink dynamically based on data.
+
+Data Manipulation
+Allows advanced operations like filtering, mapping using streams
+
+Searching/Sorting
+Common operations like searching and sorting can be applied here
+
+Consistency
+Collections follow a standard set of interfaces , can be learnt easily and used interchangeably

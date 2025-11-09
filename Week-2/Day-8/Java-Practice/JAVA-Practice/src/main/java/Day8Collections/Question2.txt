@@ -1,0 +1,16 @@
+2. List the differences between Vector, ArrayList, LinkedList, and HashSet.
+
+ArrayList is based on array meaning elements are stored in contiguous memory locations.
+In array if we want to add more elements dynamically, we need to manually create a new array  with larger size and copy previous elements
+But in arraylist, this happens automatically when inserting a new element.
+
+Hashset is used for storing only unique values
+Order is not maintained in hashset
+
+Vectors are synchronized which increases overhead.
+Vectors are no longer used unless it's a legacy code
+
+LinkedList
+Elements are stored using references.
+Each node has next and previous references.
+Slow for searching

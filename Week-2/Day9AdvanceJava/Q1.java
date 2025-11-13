@@ -1,28 +1,14 @@
 package Day9AdvanceJava;
 
-import java.util.ArrayList;
-
-// Concurrency
-
-// Goal
-// Implement Producer and Consumer threads that work together using a shared buffer.
-
-// Requirements
-// Producer generates numbers 1 to 50
-// Consumer reads and prints the numbers
-// Shared buffer size = 5
-// Producer waits if buffer is full
-// Consumer waits if buffer is empty
-// Use wait() & notify()
-
-
+import java.util.ArrayDeque;
+import java.util.Queue;
 
 class ProducerConsumer{
 
-    private final ArrayList<Integer> sharedBuffer;
+    private final Queue<Integer> sharedBuffer;
     private final int bufferSize;
 
-    ProducerConsumer(ArrayList<Integer> sharedBuffer){
+    ProducerConsumer(Queue<Integer> sharedBuffer){
         this.sharedBuffer = sharedBuffer;
         this.bufferSize = 5;
     }
@@ -30,16 +16,16 @@ class ProducerConsumer{
     public void produce() throws InterruptedException{
             for(int i=1; i<=50; i++){
                 synchronized (sharedBuffer){
-                    while (sharedBuffer.size() == bufferSize){ //wait if its full or it is consumer turn
+                    while (sharedBuffer.size() == bufferSize){ //wait if its full
                         sharedBuffer.wait();
                     }
 
                     sharedBuffer.add(i);
-                    System.out.println("Produced " + i + " | Buffer: " + sharedBuffer);
+                    System.out.println("Produced " + i + "\n"+ "Buffer Current State: " + sharedBuffer);
+                    System.out.println("Produced by "+Thread.currentThread().getName());
                     sharedBuffer.notifyAll();
 
                 }
-//                Thread.sleep(200);
             }
 
     }
@@ -48,22 +34,23 @@ class ProducerConsumer{
         int counter=1;
         while(counter!=50){
             synchronized (sharedBuffer){
-                while(sharedBuffer.isEmpty()) //wait if its empty or its producer's turn
+                while(sharedBuffer.isEmpty()) //wait if its empty
                     sharedBuffer.wait();
-                int consumed = sharedBuffer.remove(0);
-                System.out.println("Consumed " + consumed + " | Buffer: " + sharedBuffer);                sharedBuffer.notifyAll();
+                int consumed = sharedBuffer.poll();
+                System.out.println("Consumed " + consumed + "\n"+ "Buffer Current State: " + sharedBuffer);
+                System.out.println("Consumed by "+Thread.currentThread().getName());
+
 
                 counter++;
                 sharedBuffer.notifyAll();
             }
-//            Thread.sleep(200);
         }
     }
 
 }
 public class Q1 {
     public static void main(String[] args) {
-        ArrayList<Integer> sharedBuffer = new ArrayList<>(5);
+        Queue<Integer> sharedBuffer = new ArrayDeque<>();
 
         ProducerConsumer producerConsumer = new ProducerConsumer(sharedBuffer);
         Thread producer = new Thread(()->{

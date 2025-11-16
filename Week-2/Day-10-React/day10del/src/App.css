@@ -40,3 +40,14 @@
 .read-the-docs {
   color: #888;
 }
+
+nav{
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.time-container{
+  display: flex;
+  justify-content: center;
+}
